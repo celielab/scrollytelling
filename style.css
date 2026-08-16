@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    background-color: #EDF0DA;
+    color: #32161F;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 56.25rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #F2BDBF;
+    z-index: 1000;
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1.5rem;
+    list-style: none;
+    padding: 1rem 1rem;
+}
+
+.nav a {
+    color: #32161F;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: #4E4B34;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #32161F;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1.25rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #F2BDBF;
+}
+
+.alt-bg {
+    background-color: #E5E8D5;
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #32161F;
+    color: #EDF0DA;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 3.5rem;
+    color: #EDF0DA;
+}
+
+.hero-section p {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: #F2BDBF;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.card {
+    background-color: #4E4B34;
+    color: #EDF0DA;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+}
+
+.card h3 {
+    color: #F2BDBF;
+}
+
+.list-group .barrier-item {
+    padding: 1.5rem 0;
+    border-bottom: 2px solid #4E4B34;
+}
+
+.highlight-box {
+    font-weight: 700;
+    font-size: 1.15rem;
+    background-color: #F2BDBF;
+    color: #32161F;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+.tools {
+    margin-bottom: 2.5rem;
+    padding-left: 1.5rem;
+    border-left: 4px solid #4E4B34;
+}
+
+.tools h3 {
+    color: #4E4B34;
+}
+
+.grid-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.map-card {
+    background-color: #EDF0DA;
+    border: 2px solid #4E4B34;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.tip-box {
+    font-style: italic;
+    background-color: #F2BDBF;
+    color: #32161F;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+.stores-container {
+    background-color: #4E4B34;
+    color: #EDF0DA;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.stores-container h3 {
+    color: #F2BDBF;
+}
+
+.stores-container ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.stores-container li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #EDF0DA;
+}
+
+.stores-container li:last-child {
+    border-bottom: none;
+}
+
+.closing-section {
+    background-color: #32161F;
+    color: #EDF0DA;
+    text-align: center;
+}
+
+.closing-section h2 {
+    color: #EDF0DA;
+}
+
+.large-text {
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    line-height: 1.2;
+    margin: 2rem 0;
+    color: #F2BDBF;
+}
+
+.closing-section .large-text + p {
+    margin-top: 3.5rem;
+}
+
+#scroll-progress-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 0.3rem;
+    width: 0%;
+    background: #F2BDBF;
+    z-index: 2000;
+    pointer-events: none;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: none;
+    background: #32161F;
+    color: #EDF0DA;
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1500;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.person-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    max-width: 20rem;
+    margin: 1rem auto 3rem auto;
+    min-height: 60px;
+    align-items: center;
+}
+
+.person-icon {
+    display: inline-block;
+    width: 10px;
+    height: 16px;
+    position: relative;
+}
+
+.person-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #F2BDBF;
+}
+
+.person-icon::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 9px;
+    border-radius: 5px 5px 2px 2px;
+    background: #F2BDBF;
+}
+
+footer {
+    background-color: #4E4B34;
+    color: #EDF0DA;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 4rem 0;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .nav ul {
+        gap: 0.25rem 1rem;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .nav a {
+        font-size: 0.8rem;
+    }
+
+    .card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .stores-container {
+        padding: 1.5rem;
+    }
+
+    .highlight-box {
+        font-size: 1.05rem;
+        padding: 1.25rem;
+    }
+
+    .grid-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 100px;
+    }
+
+    .hero-section {
+        padding-top: 100px;
+    }
+
+    .nav ul {
+        gap: 0.25rem 0.75rem;
+    }
+
+    .nav a {
+        font-size: 0.75rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.05rem;
+    }
+
+    .tools {
+        padding-left: 1rem;
+    }
+}
